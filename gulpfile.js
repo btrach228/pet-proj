@@ -9,14 +9,14 @@ let path = {
     css: projectFolder + "/style/",
     js: projectFolder + "/script/",
     media: projectFolder + "/media/",
-    fonts: projectFolder + "/fonts/",
+    fonts: projectFolder + "./fonts/",
   },
   src: {
     html: [sourceFolder + "/*.html", "!" + sourceFolder + "/_*.html"],
     css: sourceFolder + "/style/style.scss",
     js: sourceFolder + "/script/script.js",
     media: sourceFolder + "/media/**/*.{png,jpg,png,ico,gif,svg}",
-    fonts: sourceFolder + "/fonts/**/*.ttf",
+    fonts: sourceFolder + "./fonts/**/*.ttf",
   },
   watch: {
     html: sourceFolder + "/**/*.html",
@@ -44,8 +44,11 @@ let { src, dest } = require("gulp"),
   webP = require("gulp-webp"),
   webP_html = require("gulp-webp-html"),
   webP_css = require("gulp-webpcss"),
-  svgSprite = require("gulp-svg-sprite");
-пще; //functions
+  svgSprite = require("gulp-svg-sprite"),
+  ttf2woff = require("gulp-ttf2woff"),
+  ttf2woff2 = require("gulp-ttf2woff2");
+
+//functions
 
 function browserSync() {
   browsersync.init({
@@ -139,6 +142,15 @@ function media() {
     .pipe(browsersync.stream());
 }
 
+function fonts() {
+  src(path.src.fonts).pipe(ttf2woff()).pipe(dest(path.build.fonts));
+
+  return src(path.src.fonts)
+    .pipe(dest(path.build.fonts))
+    .pipe(ttf2woff2())
+    .pipe(dest(path.build.fonts));
+}
+
 gulp.task("svgSprite", function () {
   return gulp
     .src([sourceFolder + "/iconssprite/*.svg"])
@@ -165,11 +177,13 @@ let watch = gulp.parallel(build, liveServer, browserSync);
 
 //gulp connections
 
+exports.fonts = fonts;
 exports.media = media;
-
 exports.js = js;
 exports.css = css;
 exports.html = html;
 exports.build = build;
 exports.watch = watch;
 exports.default = watch;
+
+// finish with fonts 14.04.2021 22-10
