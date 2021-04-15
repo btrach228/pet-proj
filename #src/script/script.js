@@ -25,3 +25,13 @@ element.addEventListener("click", (e) => {
   e.preventDefault();
   element.classList.toggle("active");
 });
+
+//popup
+
+function alertInfo() {
+  alert("hERE WILl BE POPUP");
+}
+
+// setTimeout(() => {
+//   alertInfo();
+// }, 10000);
