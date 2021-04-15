@@ -126,8 +126,14 @@
   }
   & .socoal_list {
     list-style: none;
-    & li {
+    & li i {
       padding-bottom: 12px;
+      transition: all ease 0.5s;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    & li i:hover {
+      color: rgba(255, 255, 255, 1);
     }
   }
 }

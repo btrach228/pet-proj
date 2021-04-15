@@ -180,8 +180,17 @@
   list-style: none;
 }
 
-.header_footer .socoal_list li {
+.header_footer .socoal_list li i {
   padding-bottom: 12px;
+  -webkit-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.header_footer .socoal_list li i:hover {
+  color: white;
 }
 
 .catalog_btn {
