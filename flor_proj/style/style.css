@@ -76,6 +76,7 @@
   text-transform: uppercase;
   font-family: "Forum-Regular";
   position: relative;
+  cursor: pointer;
 }
 
 .menu_nav::after {
@@ -87,6 +88,7 @@
   width: 15px;
   height: 2px;
   background-color: #fff;
+  cursor: pointer;
 }
 
 .menu_nav::before {
@@ -98,6 +100,7 @@
   width: 15px;
   height: 2px;
   background-color: #fff;
+  cursor: pointer;
 }
 
 .header_main__text {
@@ -173,22 +176,42 @@
           transform: translateY(10px);
 }
 
+.header_footer .socoal_list {
+  list-style: none;
+}
+
+.header_footer .socoal_list li {
+  padding-bottom: 12px;
+}
+
 .catalog_btn {
   position: relative;
   bottom: 40px;
   -webkit-transform: rotate(90deg);
       -ms-transform: rotate(90deg);
           transform: rotate(90deg);
+  cursor: pointer;
+  font-family: "Forum-Regular";
 }
 
-.catalog_btn p:before {
-  content: "";
-  width: 21px;
-  height: 21px;
-  color: #fff;
-  background: url("../media/long-arrow-alt-down-solid.svg");
-  display: block;
+.catalog_btn p {
+  position: relative;
+}
+
+.catalog_btn i {
   position: absolute;
+  top: 0;
+  right: -30px;
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.catalog_btn p:hover + i {
+  right: -35px;
 }
 
 .webp .header { background-image: url(../media/header-bg.webp); }

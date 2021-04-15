@@ -51,6 +51,7 @@
   text-transform: uppercase;
   font-family: "Forum-Regular";
   position: relative;
+  cursor: pointer;
   &::after {
     content: "";
     display: block;
@@ -60,6 +61,7 @@
     width: 15px;
     height: 2px;
     background-color: #fff;
+    cursor: pointer;
   }
   &::before {
     content: "";
@@ -70,6 +72,7 @@
     width: 15px;
     height: 2px;
     background-color: #fff;
+    cursor: pointer;
   }
 }
 
@@ -121,19 +124,33 @@
   & .mouse_icon:hover {
     transform: translateY(10px);
   }
+  & .socoal_list {
+    list-style: none;
+    & li {
+      padding-bottom: 12px;
+    }
+  }
 }
 
 .catalog_btn {
   position: relative;
   bottom: 40px;
   transform: rotate(90deg);
-  & p:before {
-    content: "";
-    width: 21px;
-    height: 21px;
-    color: #fff;
-    background: url("../media/long-arrow-alt-down-solid.svg");
-    display: block;
+  cursor: pointer;
+  font-family: "Forum-Regular";
+
+  & p {
+    position: relative;
+  }
+
+  & i {
     position: absolute;
+    top: 0;
+    right: -30px;
+    transform: rotate(90deg);
+    transition: all 0.4s ease;
+  }
+  & p:hover + i {
+    right: -35px;
   }
 }
