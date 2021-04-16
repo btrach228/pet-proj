@@ -33,3 +33,22 @@ function alertInfo() {
 // setTimeout(() => {
 //   alertInfo();
 // }, 10000);
+
+// popup form
+
+const closePopupForm = document.querySelector(".popup__close");
+const popupForm = document.querySelector(".popup__container");
+
+// setTimeout(() => {
+//   popupForm.classList.add("active");
+// }, 1000);
+
+closePopupForm.addEventListener("click", () => {
+  popupForm.classList.add("popup__container__close");
+  popupForm.classList.remove("popup__container__active");
+});
+function showPopupForm() {
+  popupForm.classList.add("popup__container__active");
+}
+
+setTimeout(showPopupForm, 5000);
