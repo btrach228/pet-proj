@@ -51,6 +51,11 @@
   z-index: 1;
 }
 
+.socoal_list li a i {
+  position: relative;
+  bottom: 25px;
+}
+
 .header_nav {
   padding: 40px 50px;
   margin-bottom: 100px;
