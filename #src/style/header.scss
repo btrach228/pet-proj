@@ -12,9 +12,25 @@
   background-image: url("../media/header-bg.jpg");
   background-position: center;
   background-size: cover;
-  padding-bottom: 50px;
   min-width: 100%;
   overflow: hidden;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #3b181e, transparent);
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  @media (max-width: 767px) {
+    &::before {
+      display: none;
+    }
+  }
 }
 
 .header_nav {
@@ -346,6 +362,7 @@
     align-items: center;
     align-self: center;
     transform: rotate(180deg);
+    margin-bottom: 50px;
   }
 }
 
