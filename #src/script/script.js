@@ -14,3 +14,22 @@ testWebP(function (support) {
     document.querySelector("body").classList.add("no-webp");
   }
 });
+
+//burger click
+
+let element = document.querySelector(".menu_nav");
+
+element.addEventListener("click", (e) => {
+  e.preventDefault();
+  element.classList.toggle("active");
+});
+
+//popup
+
+function alertInfo() {
+  alert("hERE WILl BE POPUP");
+}
+
+// setTimeout(() => {
+//   alertInfo();
+// }, 10000);
