@@ -210,7 +210,7 @@ gulp.task("otfTottf", function () {
 
 let build = gulp.series(
   clean,
-  gulp.parallel(js, css, html, media, fonts),
+  gulp.parallel(css, html, media, js, fonts),
   fontStyle
 );
 
