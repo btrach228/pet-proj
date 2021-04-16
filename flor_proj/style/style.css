@@ -126,6 +126,7 @@
   height: 2px;
   background-color: #fff;
   cursor: pointer;
+  z-index: 999;
   -webkit-transition: all ease 0.5s;
   -o-transition: all ease 0.5s;
   transition: all ease 0.5s;
@@ -144,6 +145,7 @@
   -webkit-transition: all ease 0.5s;
   -o-transition: all ease 0.5s;
   transition: all ease 0.5s;
+  z-index: 999;
 }
 
 .menu_nav.active::before {
@@ -399,7 +401,6 @@
   color: #fff;
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
@@ -611,10 +612,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  width: 90%;
+  width: 100%;
   margin: 20px 20px;
   margin-top: 60px;
 }
@@ -657,8 +655,10 @@
 
 .popup__container .popup__block .popup__close {
   position: absolute;
-  top: 2px;
-  right: 5px;
+  top: 5px;
+  font-size: 22px;
+  font-family: Arial, sans-serif;
+  right: 15px;
   color: rgba(255, 255, 255, 0.5);
   -webkit-transition: all ease 0.2s;
   -o-transition: all ease 0.2s;
@@ -680,6 +680,95 @@
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
+}
+
+.popap__container_wrap {
+  width: 100%;
+  font-family: "Forum-Regular";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: #3b181e;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 2;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.popap__container_wrap .popap__container__burger {
+  z-index: 4;
+  position: relative;
+  top: 0px;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+}
+
+.popap__container_wrap .popup__top_block {
+  color: #fff;
+  font-weight: 100;
+  margin-top: 50px;
+}
+
+.popap__container_wrap .popup__top_block p {
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 21px;
+  text-transform: uppercase;
+}
+
+.popap__container_wrap .popap__bottom_block {
+  margin-top: 100px;
+}
+
+.popap__container_wrap .popap__bottom_block .popup__bottom_list {
+  list-style: none;
+}
+
+.popap__container_wrap .popap__bottom_block .popup__bottom_list .selected-li a {
+  color: white !important;
+  font-size: 30px !important;
+  font-weight: 100 !important;
+  text-transform: uppercase !important;
+}
+
+.popap__container_wrap .popap__bottom_block .popup__bottom_list a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  font-weight: 100;
+  text-transform: uppercase;
+  -webkit-transition: 0.5;
+  -o-transition: 0.5;
+  transition: 0.5;
+}
+
+.popap__container_wrap .popap__bottom_block .popup__bottom_list a:hover,
+.popap__container_wrap .popap__bottom_block .popup__bottom_list a:active,
+.popap__container_wrap .popap__bottom_block .popup__bottom_list a:focus {
+  color: white;
+}
+
+.popap__container_wrap .popap__bottom_block .popup__bottom_list li {
+  padding-top: 50px;
+}
+
+.popap__container_wrap__active {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.lockScroll {
+  overflow: hidden;
 }
 
 * {
@@ -725,9 +814,11 @@
 
   .menu_nav.active::before {
     content: "";
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     position: absolute;
-    left: -30px;
+    left: 30px;
     top: 9px;
     width: 20px;
     height: 2px;
@@ -740,9 +831,11 @@
 
   .menu_nav.active::after {
     content: "";
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     position: absolute;
-    left: -30px;
+    left: 0px;
     top: 9px;
     width: 20px;
     height: 2px;
@@ -857,6 +950,36 @@
 
   .footer_content .footer_content__goods .footer_content__goods__list li {
     padding-bottom: 25px;
+  }
+
+  .popup__container .popup__block {
+    width: 300px;
+    height: 393px;
+  }
+
+  .popup__container .popup__block img {
+    display: none;
+  }
+
+  .popup__container .popup__block .popup__form_text {
+    text-align: center;
+    margin-left: 40px;
+  }
+
+  .popup__container .popup__block .popup__form form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) and (max-width: 767px) {
+  .menu_nav.active::before {
+    left: 30px;
+    top: 9px;
+  }
+
+  .menu_nav.active::after {
+    left: 30px;
+    top: 9px;
   }
 }
 

@@ -92,6 +92,8 @@
     height: 2px;
     background-color: #fff;
     cursor: pointer;
+    z-index: 999;
+
     transition: all ease 0.5s;
   }
   @media (max-width: 320px) {
@@ -111,6 +113,7 @@
     background-color: #fff;
     cursor: pointer;
     transition: all ease 0.5s;
+    z-index: 999;
   }
 
   &.active::before {
@@ -166,21 +169,30 @@
 
     &.active::before {
       content: "";
-      display: block;
+      display: flex;
+      @media (max-width: 767px) {
+        left: 30px;
+        top: 9px;
+      }
       position: absolute;
-      left: -30px;
+      left: 30px;
       top: 9px;
       width: 20px;
       height: 2px;
+
       background-color: #fff;
       cursor: pointer;
       transform: rotate(-45deg);
     }
     &.active::after {
       content: "";
-      display: block;
+      display: flex;
+      @media (max-width: 767px) {
+        left: 30px;
+        top: 9px;
+      }
       position: absolute;
-      left: -30px;
+      left: 0px;
       top: 9px;
       width: 20px;
       height: 2px;

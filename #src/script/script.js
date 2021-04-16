@@ -18,17 +18,17 @@ testWebP(function (support) {
 //burger click
 
 let element = document.querySelector(".menu_nav");
+let body = document.querySelector("body");
+let popupHeader = document.querySelector(".popap__container_wrap");
 
 element.addEventListener("click", (e) => {
-  e.preventDefault();
+  // e.preventDefault();
   element.classList.toggle("active");
+  body.classList.toggle("lockScroll");
+  popupHeader.classList.toggle("popap__container_wrap__active");
 });
 
 //popup
-
-function alertInfo() {
-  alert("hERE WILl BE POPUP");
-}
 
 // setTimeout(() => {
 //   alertInfo();
@@ -51,4 +51,4 @@ function showPopupForm() {
   popupForm.classList.add("popup__container__active");
 }
 
-setTimeout(showPopupForm, 5000);
+setTimeout(showPopupForm, 60000);

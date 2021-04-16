@@ -10,6 +10,7 @@
   box-sizing: border-box;
   justify-content: center;
   transition: all 0.7s ease;
+
   & .popup__block {
     display: flex;
     background-color: #3b181e;
@@ -18,6 +19,12 @@
     align-items: center;
     width: 600px;
     height: 393px;
+
+    @media (max-width: 767px) {
+      width: 300px;
+      height: 393px;
+    }
+
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Параметры тени */
     margin: 0 auto;
     & .popup__img {
@@ -29,20 +36,31 @@
       width: 293px;
       height: 393px;
       margin-top: 3px;
+      @media (max-width: 767px) {
+        & {
+          display: none;
+        }
+      }
     }
     & .popup__form_text {
       text-align: center;
       color: #fff;
       font-family: "Forum-Regular";
       font-weight: 100;
+      @media (max-width: 767px) {
+        text-align: center;
+        margin-left: 40px;
+      }
     }
     & .popup__form form {
       display: flex;
       flex-direction: column;
-      flex: 1;
-      width: 90%;
+      width: 100%;
       margin: 20px 20px;
       margin-top: 60px;
+      @media (max-width: 767px) {
+        width: 100%;
+      }
       & .popup__input {
         margin-bottom: 30px;
         margin: 0 auto;
@@ -77,9 +95,11 @@
     }
     & .popup__close {
       position: absolute;
+      top: 5px;
+      font-size: 22px;
+      font-family: Arial, sans-serif;
 
-      top: 2px;
-      right: 5px;
+      right: 15px;
       color: rgba(255, 255, 255, 0.5);
       transition: all ease 0.2s;
       cursor: pointer;
