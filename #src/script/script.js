@@ -19,8 +19,6 @@ testWebP(function (support) {
 
 let element = document.querySelector(".menu_nav");
 
-console.log(element);
-
 element.addEventListener("click", (e) => {
   e.preventDefault();
   element.classList.toggle("active");
