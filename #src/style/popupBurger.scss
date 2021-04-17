@@ -36,15 +36,20 @@
 
   & .popap__bottom_block {
     margin-top: 100px;
+    @media (max-width: 767px) {
+      & {
+        margin-top: 0px;
+      }
+    }
 
     & .popup__bottom_list {
       list-style: none;
 
-      & .selected-li a {
-        color: white !important;
-        font-size: 30px !important;
-        font-weight: 100 !important;
-        text-transform: uppercase !important;
+      & .selected-li {
+        color: white;
+        font-size: 30px;
+        font-weight: 100;
+        text-transform: uppercase;
       }
       & a {
         text-decoration: none;

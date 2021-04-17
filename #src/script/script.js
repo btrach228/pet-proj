@@ -36,19 +36,34 @@ element.addEventListener("click", (e) => {
 
 // popup form
 
+const supportBtn = document.querySelector(".fa-info-circle");
 const closePopupForm = document.querySelector(".popup__close");
 const popupForm = document.querySelector(".popup__container");
+const popup__submit_btn = document.querySelector(".popup__submit_btn");
 
-// setTimeout(() => {
-//   popupForm.classList.add("active");
-// }, 1000);
+supportBtn.addEventListener("click", showPopupForm);
 
 closePopupForm.addEventListener("click", () => {
   popupForm.classList.add("popup__container__close");
   popupForm.classList.remove("popup__container__active");
 });
-function showPopupForm() {
+function showPopupForm(e) {
   popupForm.classList.add("popup__container__active");
 }
 
 setTimeout(showPopupForm, 60000);
+
+// popup__submit_btn.addEventListener("click", () => {
+//   let popupConfirm = document.createElement("div");
+//   popupConfirm.classList.add("confirmed");
+//   body.appendChild(popupConfirm);
+//   let text = document.createElement("h1");
+//   popupConfirm.appendChild(text);
+//   popupConfirm.style.width = "300px";
+//   popupConfirm.style.height = "200px";
+//   popupConfirm.style.backgroundColor = "#3B181E";
+//   text.innerHTML = "Sent , thank you";
+//   text.style.textAlign = "center";
+//   text.style.marginTop = "100px";
+//   text.style.fontSize = "33px";
+// });

@@ -14,6 +14,8 @@
   background-size: cover;
   min-width: 100%;
   overflow: hidden;
+  position: relative;
+  padding-bottom: 100px;
   &::before {
     content: "";
     width: 100%;
@@ -21,7 +23,6 @@
     background: linear-gradient(to top, #3b181e, transparent);
     display: block;
     position: absolute;
-    left: 0;
     bottom: 0;
     z-index: 1;
   }
@@ -279,11 +280,10 @@
 }
 
 .header_footer {
-  margin: 50px 30px;
+  margin: 10px 30px 0px 30px;
   display: flex;
   justify-content: space-between;
   color: #fff;
-  margin-bottom: 50px;
   & .mouse_icon {
     position: relative;
     left: 50px;
@@ -297,9 +297,6 @@
       display: none;
     }
   }
-  & .mouse_icon:hover {
-    transform: translateY(10px);
-  }
   & .socoal_list {
     list-style: none;
     & .fab {
@@ -307,11 +304,14 @@
       transition: all ease 0.5s;
       cursor: pointer;
       color: rgba(255, 255, 255, 0.7);
-      width: 150%;
+      font-size: 18px;
     }
-    & li i:hover {
-      color: rgba(255, 255, 255, 1);
-      transform: translateX(10px);
+    & .fas.fa-info-circle {
+      padding-bottom: 12px;
+      transition: all ease 0.5s;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 18px;
     }
 
     @media (max-width: 767px) {
@@ -319,7 +319,9 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-        margin-right: 60px;
+        align-items: center;
+        align-self: center;
+        position: relative;
       }
 
       & li i {
@@ -327,8 +329,13 @@
       }
       & li i:hover {
         color: rgba(255, 255, 255, 1);
-        transform: translateX(0px);
+        transform: translateX(0);
       }
+    }
+
+    & li i:hover {
+      color: rgba(255, 255, 255, 1);
+      transform: translateX(10px);
     }
   }
 }
