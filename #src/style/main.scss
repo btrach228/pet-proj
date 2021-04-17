@@ -3,19 +3,32 @@
   background-color: #3b181e;
   font-family: Forum-Regular;
   position: relative;
-  &__bg-title {
-    display: none;
-  }
-
   &__catalog {
     width: 1520px;
     margin: 0 auto;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: 'Каталог услуг';
+      text-align: center;
+      left: -4%;
+      top: 15px;
+      width: 1660px;
+      font-size: 220px;
+      font-weight: 400;
+      line-height: 243px;
+      letter-spacing: 0.05em;
+      color: #fff;
+      opacity: .03;
+      text-transform: uppercase;
+    }
   }
   &__catalog-title {
     width: 230px;
     text-align: center;
     color: #fff;
     font-size: 30px;
+    font-weight: 400;
     line-height: 33px;
     letter-spacing: 0.06em;
     margin: 0 auto;
@@ -43,6 +56,24 @@
     height: 470px;
     padding: 10px;
     box-sizing: border-box;
+    transition: all .5s;
+    &:hover {
+      outline: 1px solid rgba(#fff, .2);
+    }
+  }
+  &__catalog-item:hover {
+    
+    .main__catalog-card {
+      
+      &::before {
+        transition: all .5s;
+        background-color: rgba(#000, .6);
+      }
+    }
+    .main__catalog-btn {
+      transition: all .5s;
+      display: inline-block;
+    }
   }
   &__catalog-card {
     display: flex;
@@ -54,15 +85,43 @@
     background-position: center;
     background-size: cover;
     box-sizing: border-box;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(#000, 0);
+      z-index: 0;
+    }
   }
   &__catalog-card-title {
     margin-top: auto;
     color: #fff;
     font-size: 16px;
     font-weight: 400;
-    
+    line-height: 170%;
     text-transform: uppercase;
-
+    position: relative;
+  }
+  &__catalog-btn {
+    text-align: center;
+    margin-top: 20px;
+    padding: 18px 30px 19px 30px;
+    width: 200px;
+    height: 50px;
+    color: #000;
+    font-family: Forum;
+    font-size: 12px;
+    line-height: 13px;
+    text-transform: uppercase;
+    background-color: #fff;
+    text-decoration: none;
+    box-sizing: border-box;
+    display: none;
+    position: relative;
   }
   &__catalog-card--one {
     background-image: url("../media/catalog-photo-1.jpg");
@@ -99,4 +158,6 @@
       bottom: 5px;
     }
   }
+
+  
 }
