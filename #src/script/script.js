@@ -15,55 +15,93 @@ testWebP(function (support) {
   }
 });
 
-//burger click
+// slider and counter
 
-let element = document.querySelector(".menu_nav");
-let body = document.querySelector("body");
-let popupHeader = document.querySelector(".popap__container_wrap");
+//selectors
+const text = document.querySelector(".counter-block");
+const btnR = document.querySelector(".main__caruselle-button_right");
+const btnL = document.querySelector(".main__caruselle-button_left");
 
-element.addEventListener("click", (e) => {
-  // e.preventDefault();
-  element.classList.toggle("active");
-  body.classList.toggle("lockScroll");
-  popupHeader.classList.toggle("popap__container_wrap__active");
-});
+const img = document.querySelector(".slder_1");
 
-//popup
+//listeners
+btnR.addEventListener("click", right);
+btnL.addEventListener("click", left);
 
-// setTimeout(() => {
-//   alertInfo();
-// }, 10000);
-
-// popup form
-
-const supportBtn = document.querySelector(".fa-info-circle");
-const closePopupForm = document.querySelector(".popup__close");
-const popupForm = document.querySelector(".popup__container");
-const popup__submit_btn = document.querySelector(".popup__submit_btn");
-
-supportBtn.addEventListener("click", showPopupForm);
-
-closePopupForm.addEventListener("click", () => {
-  popupForm.classList.add("popup__container__close");
-  popupForm.classList.remove("popup__container__active");
-});
-function showPopupForm(e) {
-  popupForm.classList.add("popup__container__active");
+//functions
+function left() {
+  text.innerText = "1/2";
+  img.innerHTML = `<img src="./media/slider_phot__1.jpg" alt="" class="right__photo" />  <a href="#" class="main__caruselle-right-btn"
+  >ВЗГЛЯНУТЬ <span> &#8594;</span></a
+>`;
+}
+function right() {
+  text.innerText = "2/2";
+  img.innerHTML = `<img src="./media/pexels-pixabay-534174.jpg" alt="" class="right__photo" />  <a href="#" class="main__caruselle-right-btn"
+  >ВЗГЛЯНУТЬ <span> &#8594;</span></a
+>`;
 }
 
-setTimeout(showPopupForm, 60000);
+//burger
 
-// popup__submit_btn.addEventListener("click", () => {
-//   let popupConfirm = document.createElement("div");
-//   popupConfirm.classList.add("confirmed");
-//   body.appendChild(popupConfirm);
-//   let text = document.createElement("h1");
-//   popupConfirm.appendChild(text);
-//   popupConfirm.style.width = "300px";
-//   popupConfirm.style.height = "200px";
-//   popupConfirm.style.backgroundColor = "#3B181E";
-//   text.innerHTML = "Sent , thank you";
-//   text.style.textAlign = "center";
-//   text.style.marginTop = "100px";
-//   text.style.fontSize = "33px";
-// });
+const burgerBtn = document.querySelector(".header__navigation__burger");
+const burgerMenu = document.querySelector(".header__navigation");
+const currSlide = document.querySelectorAll(".header__navigation-item a");
+const body = document.querySelector("body");
+
+burgerBtn.addEventListener("click", (e) => {
+  // e.preventDefault();
+  burgerBtn.classList.toggle("header__navigation__burger-active");
+  burgerMenu.classList.toggle("header__navigation-active");
+  body.classList.toggle("active");
+});
+
+currSlide.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    burgerBtn.classList.remove("header__navigation__burger-active");
+    burgerMenu.classList.remove("header__navigation-active");
+    body.classList.remove("active");
+    currSlide.classList.toggle("header__navigation-item__active");
+  });
+});
+
+//header
+
+const header = document.querySelector(".header");
+
+window.addEventListener("scroll", () => {
+  header.classList.add("active");
+});
+
+//input check
+
+const inp = document.querySelectorAll("input");
+const submBtn = document.querySelector(".main__contact-us-lf_btn");
+const emailInp = document.querySelector("input[type=email]");
+const textArea = document.querySelector("textarea");
+const formBlock = document.querySelector(".main__contact-us-lf");
+
+submBtn.addEventListener("click", (e) => {
+  inp.forEach((item) => {
+    if (!item.value || item.value === " ") {
+      item.style.border = "1px solid red";
+      e.preventDefault();
+    } else {
+      item.style.border = "1px solid green";
+    }
+    let alertShort = document.createElement("p");
+    formBlock.appendChild(alertShort);
+    alertShort.innerText = "Минимальная длина текса 50 слов ";
+
+    if (textArea.value.length < 50) {
+      textArea.style.border = "1px solid red";
+
+      alertShort.classList.add("form-error");
+    } else if (textArea.value.length >= 50) {
+      textArea.style.border = "1px solid green";
+      alertShort.innerText = "";
+      formBlock.classList.remove("form-error");
+      formBlock.removeChild(alertShort);
+    }
+  });
+});
