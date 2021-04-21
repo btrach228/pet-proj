@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/btrach228/pet_proj.git"
+    "url": "git+https://github.com/btrach228/pet_proj.git/"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/btrach228/floristy_project/issues"
   },
-  "homepage": "https://github.com/btrach228/pet_proj.git#readme",
+  "homepage": "https://github.com/btrach228/floristy_project#readme",
   "devDependencies": {
     "browser-sync": "^2.26.14",
     "del": "^6.0.0",
