@@ -1156,6 +1156,8 @@
   .header.active {
     position: static;
     width: 100%;
+    -webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+            box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
     background-color: none;
   }
 
